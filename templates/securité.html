@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/securité.css">
+</head>
+<header>
+    <a href="{{url_for('home')}}">
+        <div class="photologo">
+            <img src="/static/accueil/logo.png" alt="Logo">
+        </div>
+    </a>
+    
+    <nav>
+        <ul>
+            <li><a href="{{url_for('home')}}">Accueil</a></li>
+            <li><a href="{{url_for('association')}}">Associations</a></li>
+            <li><a href="{{url_for('friends')}}">Amis</a></li>
+            <li><a href="{{url_for('Leaderboard')}}">Classement</a></li>
+        </ul>
+    </nav>
+    <a href="{{url_for ('profile')}}">
+        <div class="profile-section">
+            <img src="{{ url_for('static', filename='profile_pictures/' + user_data[8] ) }}"  alt="Profil" class="profile-logo">
+        </div>
+    </a>
+
+    
+</header>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category=="info" %}
+                    <div class="info">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="error">
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    
+    <div class="container">
+        <h1>Sécurité</h1>
+        <form action="#" method="post">
+            <h2>Nouveau mot de passe</h2>
+            <input type="password" id="new_password" name="new_password" required>
+            <h2>Confirmer nouveau mot de passe</h2>
+            <input type="password" id="new_password2" name="new_password2" required>
+            <br>
+            <input class="boutton" type="submit" value="Modifier">
+        </form>
+    </div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="{{url_for('home')}}">
+            <div class="photologo">
+                <img src="/static/accueil/logo.png" alt="Logo">
+            </div>
+        </a>
+        
+        <nav>
+            <ul>
+                <li><a href="{{url_for('home')}}">Accueil</a></li>
+                <li><a href="{{url_for('association')}}">Associations</a></li>
+                <li><a href="{{url_for('friends')}}">Amis</a></li>
+                <li><a href="{{url_for('Leaderboard')}}">Classement</a></li>
+            </ul>
+        </nav>
+        <a href="{{url_for ('profile')}}">
+            <div class="profile-section">
+                <img src="{{ url_for('static', filename='profile_pictures/' + user_data[8] ) }}" alt="Profil" class="profile-logo">
+            </div>
+        </a>
+        
+    </header>
+    <main>
+        <div class="photos-container">
+            <div class="photo-section">
+                <img src="/static/accueil/photo1.jpeg" alt="Photo 1" class="photo">
+                <div class="photo-text">Notre mission: rendre le bénévolat réellement accessible.</div>
+            </div>
+            <div class="photo-section">
+                <img src="/static/accueil/photo2.jpeg" alt="Photo 2" class="photo">
+                <div class="photo-text">Les plus grands nous font déjà confiance.</div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        
+        <p >© 2024 good4good</p>
+    </footer>
+</body>
+</html>

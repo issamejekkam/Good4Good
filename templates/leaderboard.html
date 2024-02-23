@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classement</title>
+    <link rel="stylesheet" href='/static/leaderboard.css'>
+</head>
+<body>
+    <header>
+        
+        <a href="{{url_for('home')}}">
+            <div class="photologo">
+                <img src="/static/accueil/logo.png" alt="Logo">
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="{{url_for('home')}}">Accueil</a></li>
+                <li><a href="{{url_for('association')}}">Associations</a></li>
+
+                <li><a href="{{url_for('Leaderboard')}}">Classement</a></li>
+            </ul>
+
+
+        </nav>
+
+        <ul><a class="invisible" href="{{url_for('profile')}}">Se connecter</a>  </ul>
+        <a href="{{url_for ('profile')}}">
+            <div class="profile-section">
+                <img src="/static/accueil/profile.jpeg" alt="Profil" class="profile-logo">
+            </div>
+        </a>
+        
+    </header>
+
+
+<!-- Podium -->
+<div class="podium">
+    <div class="podium-item">
+        <p class="rank">2</p>
+        <div class="participant">
+            <img src="{{ url_for('static', filename='profile_pictures/' + data[1][2]) }}" alt="{{ data[1][0] }}">
+            <p>{{ data[1][0] }}</p>
+            <p>{{ data[1][1] }} points</p>
+        </div>
+    </div>
+
+    <div class="podium-item">
+        <p class="rank">1</p>
+        <div class="participant">
+            <img src="{{ url_for('static', filename='profile_pictures/' + data[0][2]) }}" alt="{{ data[0][0] }}">
+            <p>{{ data[0][0] }}</p>
+            <p>{{ data[0][1] }} points</p>
+        </div>
+    </div>
+
+    <div class="podium-item">
+        <p class="rank">3</p>
+        <div class="participant">
+            <img src="{{ url_for('static', filename='profile_pictures/' + data[2][2]) }}" alt="{{ data[2][0] }}">
+            <p>{{ data[2][0] }}</p>
+            <p>{{ data[2][1] }} points</p>
+        </div>
+    </div>
+</div>
+ 
+
+<!-- Tableau classique -->
+<table class="classic-table">
+    <thead>
+        <tr>
+            <td>Photo de profil</td>
+            <td>Pseudo</td>
+            <td>Classement</td>
+            <td>Points</td>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for participant in data[3:] %}
+
+            {% if loop.index < 50 %}
+
+            <tr class="table-row">
+                <td class="profile-picture-cell"><img src="{{ url_for('static', filename='profile_pictures/' + participant[2]) }}" alt="{{ participant[0] }}"></td>
+                <td class="profile-picture-cell"></tdclass>{{ participant[0] }}</td>
+                <td>{{ loop.index + 3 }}</td>
+                <td>{{ participant[1] }}</td>
+                
+            </tr>
+
+            {%endif%}
+       
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+header {
+    background-color: #1cc94d;
+    color: rgb(168, 220, 12);
+    display: flex;
+    justify-content: space-between; /* Modifié pour séparer le logo et la navigation */
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between; /* Sépare le contenu de l'en-tête et la section de profil */
+    align-items: center; /* Alignement vertical des éléments */
+}
+
+.profile-section {
+    /* Styles pour la section de profil */
+    display: flex;
+    align-items: center;
+}
+
+.profile-logo {
+    /* Styles pour le logo de profil */
+    width: 50px; /* ou la taille souhaitée */
+    height: 50px; /* ou la taille souhaitée */
+    border-radius: 50%; /* Rend le logo circulaire */
+    /* Ajoutez d'autres styles si nécessaire */
+}
+
+header img {
+    width: 100px; /* Ajustez selon la taille souhaitée pour le logo */
+    border-radius: 50%;
+}
+
+nav {
+    width: 100%; /* Donne à la barre de navigation toute la largeur disponible */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centre les éléments de la liste */
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 50px; /* Augmente l'espacement entre les éléments de la liste */
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease; /* Animation douce pour la transformation */
+    min-height: 20px;
+    min-width: 20px;
+    display: inline-block; /* Pour appliquer une hauteur et largeur */
+}
+
+nav ul li a:hover {
+    transform: scale(1.1); /* Agrandit le texte de 10% */
+}
+
+
+                /* Après nav-bar */
+html {
+    background-color:#E7E7DE;
+
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(255, 255, 255); 
+    background-color:#E7E7DE;
+}
+
+.container {
+    background: #fff ;
+    width: 30% ;    margin: auto ; 
+    margin-top: 8%;
+    box-shadow: 2px 5px 20px rgba(119,119,199,.5);
+    border-radius: 15px;
+    padding:20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}  
+.container h1 {
+    text-align: center;
+    color: #7ed386;
+    font-family: "Montserrat", sans-serif;
+    font-size: 23px;
+    margin-top: 40px;
+    margin-bottom: 35px;
+
+
+}  
+.container h2 {
+    text-align: center;
+    color: #777;
+    font-family: "Roboto", sans-serif;
+    text-transform:uppercase;
+    font-size: 10px;
+    letter-spacing: 0px;
+
+
+}  
+
+.container input[type="password"] {
+    color: #070707;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    border:0;
+    border-bottom: 1px solid #3fb6a8;
+    padding: 7px 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    outline:none;
+} 
+.boutton {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    text-transform:uppercase;
+    border:0;
+    font-size: 15px;
+    background: #7ed386;
+    padding:7px 15px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,.2);
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-left:30px;
+    border-radius: 5px;
+} 
+.info {
+    background: #cefad0;
+    border :1px solid green;
+    text-align: center;
+    color: green;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.error {
+    background: #ffc9bb;
+    border :1px solid red;
+    text-align: center;
+    color: red;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}  

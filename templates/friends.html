@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/friends.css">
+    <title>Amis</title>
+</head>
+<header>
+    <a href="{{url_for('home')}}">
+        <div class="photologo">
+            <img src="/static/accueil/logo.png" alt="Logo">
+        </div>
+    </a>
+    
+    <nav>
+        <ul>
+            <li><a href="{{url_for('home')}}">Accueil</a></li>
+            <li><a href="{{url_for('association')}}">Associations</a></li>
+            <li><a href="{{url_for('friends')}}">Amis</a></li>
+            <li><a href="{{url_for('Leaderboard')}}">Classement</a></li>
+        </ul>
+    </nav>
+    <a href="{{url_for ('profile')}}">
+        <div class="profile-section">
+            <img src="{{ url_for('static', filename='profile_pictures/' + user_data[8] ) }}"  alt="Profil" class="profile-logo">
+        </div>
+    </a>
+    
+</header>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category=="info" %}
+                    <div class="info">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="error">
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="barre_de_recherche">
+        <form action="/friends" method="POST">
+
+                <input type="text" class="nomcherché" placeholder="entrer un nom" name="nom" id="bare de recherche">
+
+                <button class="submit" id="'submit">Checher</button>
+
+        </form>
+    </div>
+    {%if amis%}
+    <div class="amis">
+  
+
+        
+            <table>
+        <tr class="='haut_de_table">
+                <th>Photo de profil</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>score</th>
+        </tr>
+                
+                {% for ami in amis %}
+
+                    
+        <tr>
+                    <th>
+                        <a href="{{url_for('visit_profile',visit_mail=ami[4]) }}">
+                            <img class='ami_picture' src="{{url_for('static',filename='profile_pictures/' + ami[3])}}" alt="ami1">
+                        </a>
+                    </th>
+                    <th><p>{{ami[0]}}</p></th>
+                    <th><p>{{ami[1]}}</p></th>
+
+                    <th>{{ami[2]}}</th>
+         </tr>
+                    
+                
+                {% endfor %}
+            </table>
+
+            
+    </div>  
+    {%else%}
+    <div class="no_friends">Vous n'avez pas d'amis !</div>
+    {%endif%}         
+            
+            
+            
+       
+    </div>
+    
+    
+    
+</body>
+</html>

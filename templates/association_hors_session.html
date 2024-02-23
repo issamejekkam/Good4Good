@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../static/association.css">
+    <title>Associations</title>
+</head>
+
+<body>
+    <header>
+        <a href="{{url_for('home')}}">
+            <div class="photologo">
+                <img src="/static/accueil/logo.png" alt="Logo">
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="{{url_for('home')}}">Accueil</a></li>
+                <li><a href="{{url_for('association')}}">Associations</a></li>
+
+                <li><a href="{{url_for('Leaderboard')}}">Classement</a></li>
+            </ul>
+
+
+        </nav>
+
+        <ul><a class="invisible" href="{{url_for('profile')}}">Se connecter</a>  </ul>
+        <a href="{{url_for ('profile')}}">
+            <div class="profile-section">
+                <img src="/static/accueil/profile.jpeg" alt="Profil" class="profile-logo">
+            </div>
+        </a>
+        
+    </header>
+    <main>
+        <table border="2">
+            <tr>
+                <th>Id</th>
+                <th>Association</th>
+                <th>Adresse</th>
+                <th>Numéro de téléphone</th>
+                <th>Email</th>
+                <th>Description</th>
+                <th></th>
+            </tr>
+            {%for association in result%}
+            <tr>
+                <td>{{association[0]}}</td>
+                <td>
+                    <a href="{{association[7]}}">
+                        <img src="{{association[1]}}" alt="{{association[6]}}" width="100" height="90">
+                    </a>
+
+                </td>             
+                <td>
+                    {{association[2]}}
+                </td>
+                <td>
+                    {{association[3]}}
+                </td>
+                <td>{{association[4]}}</td>
+                <td>{{association[5]}}</td>
+                
+                <td>
+                  
+                   
+                <a href="login">
+                    <button type="submit">suivre</button>
+                </a>
+
+
+                </td>
+            {%endfor%}
+
+            </tr>
+
+
+
+            
+            
+            
+        
+        </table>
+        
+
+    </main>
+</body>
+</html>
+

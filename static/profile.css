@@ -1,0 +1,318 @@
+
+header {
+    background-color: #1cc94d;
+    color: rgb(168, 220, 12);
+    display: flex;
+    justify-content: space-between; /* Modifié pour séparer le logo et la navigation */
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between; /* Sépare le contenu de l'en-tête et la section de profil */
+    align-items: center; /* Alignement vertical des éléments */
+}
+
+.profile-section {
+    /* Styles pour la section de profil */
+    display: flex;
+    align-items: center;
+}
+
+.profile-logo {
+    /* Styles pour le logo de profil */
+    width: 50px; /* ou la taille souhaitée */
+    height: 50px; /* ou la taille souhaitée */
+    border-radius: 50%; /* Rend le logo circulaire */
+    /* Ajoutez d'autres styles si nécessaire */
+}
+
+header img {
+    width: 100px; /* Ajustez selon la taille souhaitée pour le logo */
+    border-radius: 50%;
+}
+
+nav {
+    width: 100%; /* Donne à la barre de navigation toute la largeur disponible */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centre les éléments de la liste */
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 50px; /* Augmente l'espacement entre les éléments de la liste */
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease; /* Animation douce pour la transformation */
+    min-height: 20px;
+    min-width: 20px;
+    display: inline-block; /* Pour appliquer une hauteur et largeur */
+}
+
+nav ul li a:hover {
+    transform: scale(1.1); /* Agrandit le texte de 10% */
+}
+
+
+                <------- Après navbar ----->
+html {
+    background-color:#E7E7DE;
+
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(255, 255, 255); 
+    background-color:#E7E7DE;
+}
+
+
+.main {
+    
+    width: 90% ;
+    margin: auto ;
+    margin-top: 3%;
+    border-radius: 15px;
+    padding:20px 20px;
+    display: flex;  
+    justify-content: space-between;
+    align-items: flex-start;
+
+}  
+
+.sidebar {
+    background: #fff ;
+    border-radius: 10px;
+    flex-basis: 18%;
+    box-shadow: 2px 5px 20px rgba(164, 234, 188, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}  
+
+.container {
+
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}  
+.make-post{
+    background: #fff ;
+    border-radius: 10px;
+    box-shadow: 2px 5px 20px rgba(164, 234, 188, 0.5);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 50px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+}  
+.no-post{
+    background: #fff ;
+    border-radius: 10px;
+    box-shadow: 2px 5px 20px rgba(164, 234, 188, 0.5);
+    text-align: center;
+}
+.see-post{
+    background: #fff ;
+    border-radius: 10px;
+    box-shadow: 2px 5px 20px rgba(164, 234, 188, 0.5);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 50px;
+    padding-bottom: 40px;
+    padding-top: 35px;
+}  
+.make-post textarea{
+    width:80%;
+    border:0;
+    outline: 0;
+    border-bottom: 1px solid #3fb6a8;
+    background: transparent;
+    resize: none;
+    margin-bottom: 10px;
+    outline:none;
+}  
+.make-post input[type="file"]  {
+    border:0;
+    outline: 0;
+    border-bottom: 1px solid #3fb6a8;
+    background: transparent;
+    padding: 7px 0px;
+    margin-bottom: 30px;
+    outline:none;
+}  
+
+.make-post input[type="text"] {
+    border:0;
+    outline: 0;
+    border-bottom: 1px solid #3fb6a8;
+    background: transparent;
+    padding: 7px 0px;
+    margin-bottom: 10px;
+    outline:none;
+}  
+
+.make-post img {
+    width: 30px; 
+    height:30px; 
+
+}  
+.make-post button {
+    background: #fff;
+    border :1px solid #3fb6a8;
+    outline:0;
+    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    color: #000;
+    border-radius: 3px;
+    cursor: pointer;
+    
+}  
+.see-post button {
+    background: #fff;
+    border :1px solid red;
+    outline:0;
+    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    color: red;
+    border-radius: 3px;
+    cursor: pointer;
+}  
+.poubelle {
+    width: 30px; 
+    height:30px; 
+} 
+.img2 {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+} 
+.user_name   {
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-bottom: 0;
+}  
+.status {
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 17px;
+    font-style: italic;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    margin-top: 0;
+}  
+
+.post-info {
+    color: #777;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-left: 10px;
+
+
+}  
+.sidebar img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}  
+.links a {
+    text-decoration: none;
+    color: #000;
+}
+
+.sidebar h1 {
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+
+
+}  
+
+.sidebar p {
+    color: #777;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}  
+.likes{
+    color: rgb(0, 191, 255);
+}  
+.links :hover {
+    color: red;
+}  
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}  
+
+.link-nav{
+    margin-bottom: 8px;
+}  
+.assos{
+    color: green;
+    text-align: center;
+    margin-bottom: 8px;
+}  
+.make-post p {
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+}  
+.post-image {
+    width: 500px; 
+    height: 500px; 
+    object-fit: cover; 
+    margin-bottom: 10px; 
+    border-radius: 5px;
+}  
+.info {
+    background: #cefad0;
+    border :1px solid green;
+    text-align: center;
+    color: green;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.error {
+    background: #ffc9bb;
+    border :1px solid red;
+    text-align: center;
+    color: red;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}  

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/profile.css">
+    <title>Profile</title>
+
+</head>
+
+<header>
+    <a href="{{url_for('home')}}">
+        <div class="photologo">
+            <img src="/static/accueil/logo.png" alt="Logo">
+        </div>
+    </a>
+    
+    <nav>
+        <ul>
+            <li><a href="{{url_for('home')}}">Accueil</a></li>
+            <li><a href="{{url_for('association')}}">Associations</a></li>
+            <li><a href="{{url_for('friends')}}">Amis</a></li>
+            <li><a href="{{url_for('Leaderboard')}}">Classement</a></li>
+        </ul>
+    </nav>
+    <a href="{{url_for ('profile')}}">
+        <div class="profile-section">
+            <img src="{{ url_for('static', filename='profile_pictures/' + user_data[8] ) }}"  alt="Profil" class="profile-logo">
+        </div>
+    </a>
+    
+</header>
+
+<body>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category=="info" %}
+                    <div class="info">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="error">
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+
+    <div class="main">
+        <div class="sidebar">
+            <a><img src="{{ url_for('static', filename='profile_pictures/' + user_data[8] ) }}"  alt=""></a>
+            <h1>{{user_data[1]}}</h1>
+            <p>Points : {{ user_data[7] }}</p>
+            <div class="links">
+                <a class="link-nav" href="{{ url_for('infos_persos') }}">Informations personnelles</a>
+                <a class="link-nav" href="{{ url_for('securité') }}">Sécurité</a>
+                <a  href="{{ url_for('logout') }}">Se déconnecter</a>
+            </div>
+            <p>Associations suivies :</p>
+            {% for x in associations %}
+            <a class="assos">{{x}}</a>
+            {% endfor %}
+        </div>
+
+        <div class="container">
+            <div class="make-post">
+                <p>Partagez vos activités</p>
+                <form  method="post" enctype="multipart/form-data">
+                    <textarea name="status" placeholder="Une nouvelle activité ?"></textarea>
+                    <br>
+                    <label for="localisation"></label>
+                    <input type="text" name="localisation" placeholder="Localisation">
+                    <br>
+                    <label for="image"></label>
+                    <input type="file" name="image" required>
+                    <br>
+                    <button type="submit"><img src="../static/accueil/camera.jpeg">Publier</button>
+                </form>
+            </div>
+            {% if not(user_posts) %}
+                <div class="no-post">
+                    <p>Vous n'avez pas de postes</p>
+                </div>
+            {% else %}
+                {% for post in user_posts %}
+                <div class="see-post">
+                    <img class="img2" src="{{ url_for('static', filename='profile_pictures/' + user_data[8] ) }}" alt="">
+                    <p class="user_name">{{user_data[1]}}</p>
+                    <div class="post-info">
+                        <p>{{post[1]}}</p>
+                        <p>{{post[2]}}</p>
+                        {% if post[7] is not none %}
+                            <p>{{post[7]}}</p> 
+                        {% endif %}
+                    </div>
+                    {% if post[4] is not none %}
+                        <p class="status">{{post[4]}}</p> 
+                    {% endif %}
+                    <img class="post-image" src="{{ url_for('static', filename=user_data[0] + '/' + post[5]) }}" alt="">
+                    <p class="likes">{{post[6]}} Likes </p>
+                    <form method="POST" action="{{ url_for('delete_post', post_id=post[0]~'|'~post[3]~'|'~post[6]) }}">
+                        <button type="submit"><img class="poubelle" src="../static/accueil/poubelle3.jpeg">Supprimer</button>
+                    </form>
+                </div>
+                {% endfor %}
+            {% endif %}
+            
+       
+       
+
+
+
+
+
+        </div>
+    </div>
+</body>
+</html>
+

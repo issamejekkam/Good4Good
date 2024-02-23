@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/sign-up.css">
+    <title>Sign-up</title>
+</head>
+<body>
+    <form action="/sign-up" method="POST">
+        <div class="sign-up-box">
+            <div class="sign-up-header">
+                <header>Créer un compte</header>
+            </div>
+            <div class="input-box">
+                <input type="email" class="input-field" name="mail" placeholder="Email" autocomplete="off"required>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" name="user_name" placeholder="Nom_d'utilisateur" autocomplete="off" required>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" name="last_name" placeholder="Nom" autocomplete="off" required>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" name="first_name" placeholder="Prénom" autocomplete="off" required>
+            </div>
+            <div class="input-box">
+                <input type="date" class="input-field" name="birth_date" placeholder="date_de_naissance" autocomplete="off" >
+            </div>
+            <div class="input-box">
+                <input type="number" class="input-field" name="phone_number" placeholder="Numéro_de_téléphone" autocomplete="off" required>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" name="password"placeholder="Mot_de_passe" autocomplete="off" required>
+            </div>
+            <div class="input-submit">
+                <button class="submit-btn" id="submit"></button>
+                <label for="submit">Inscrivez-vous</label>
+            </div>
+            
+            
+        </div>
+        <div class="sign-in-link">
+            <a href="http://127.0.0.1:5000/login">Connectez-vous</a>
+       </div>
+    </form>
+    
+</body>
+</html>

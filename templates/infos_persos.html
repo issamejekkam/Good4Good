@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informations Personnelles</title>
+    <link rel="stylesheet" type="text/css" href="../static/infos_persos.css">
+</head>
+<header>
+    <a href="{{url_for('home')}}">
+        <div class="photologo">
+            <img src="/static/accueil/logo.png" alt="Logo">
+        </div>
+    </a>
+    
+    <nav>
+        <ul>
+            <li><a href="{{url_for('home')}}">Accueil</a></li>
+            <li><a href="{{url_for('association')}}">Associations</a></li>
+            <li><a href="{{url_for('friends')}}">Amis</a></li>
+            <li><a href="{{url_for('Leaderboard')}}">Classement</a></li>
+        </ul>
+    </nav>
+    <a href="{{url_for ('profile')}}">
+        <div class="profile-section">
+            <img src="{{ url_for('static', filename='profile_pictures/' + user_data[8] ) }}"  alt="Profil" class="profile-logo">
+        </div>
+    </a>
+    
+</header>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category=="info" %}
+                    <div class="info">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="error">
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    
+    <div class="container">
+        <div class="photo_profile">
+            <img  src="{{ url_for('static', filename='profile_pictures/' + user_data[8] ) }}">
+            <form action="#" method="post" enctype="multipart/form-data">
+                <input type="file" name="fichier">
+                <br>
+                <input class="boutton" type="submit" value="Modifier">
+                <br>
+            </form>
+        </div>
+    
+    
+        <div class="infos_persos">
+            <h1>Mes informations personnelles</h1>
+            <form action="#" method="post">
+        
+                <h2>Email</h2>
+                <input type="mail" id="mail" name="mail" value="{{ user_data[0] }}">
+                
+        
+                <h2>Nom d'utilisateur</h2>
+                <input type="text" id="user_name" name="user_name" value="{{ user_data[1] }}">
+                
+        
+                <h2>Nom</h2>
+                <input type="text" id="last_name" name="last_name" value="{{ user_data[2] }}">
+              
+        
+                <h2>Prénom</h2>
+                <input type="text" id="first_name" name="first_name" value="{{ user_data[3] }}">
+              
+        
+                <h2>Date de naissance</h2>
+                <input type="date" id="birth_date" name="birth_date" value="{{ user_data[4] }}">
+               
+        
+                <h2>Numéro de téléphone</h2>
+                <input type="text" id="phone_number" name="phone_number" value="{{ user_data[5] }}">
+                
+                <br>
+                <input class ="boutton" type="submit" value="Modifier">
+                <br>
+            </form>
+        </div>
+        
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/login.css">
+    <title>Connexion</title>
+
+</head>
+
+<body>
+
+
+ 
+    <form action="/login" method="POST">
+        
+  
+        <div class="login-box">
+            <div>
+                <img src="/static/accueil/Image.png" alt="image">   
+            </div>
+
+            
+            <div class="login-header">
+  
+                <header>Connexion</header>
+            </div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category=="info" %}
+                        <div class="info">
+                            {{ message }}
+                        </div>
+                    {% else %}
+                        <div class="error">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+            <div class="input-box">
+                <input type="text" class="input-field" name="mail" placeholder="Email" autocomplete="off" required>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" name="password"placeholder="Mot_de_passe" autocomplete="off" required>
+            </div>
+            <div class="forgot">
+                <section> 
+                    <a href="http://127.0.0.1:5000/ForgottenPassword">Mot de passe oublié</a>
+                </section>
+            </div>
+            <div class="input-submit">
+                <button class="submit-btn" id="submit"></button>
+                <label for="submit">Connectez-vous</label>
+            </div>
+            <div class="sign-up-link">
+                <p>Vous n'aves pas de compte ? <a href="http://127.0.0.1:5000/sign-up">Inscrivez-vous</a></p>
+                
+                <p class="invité"><a href="{{url_for('home')}}">Continuer en tant qu'invité</a></p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

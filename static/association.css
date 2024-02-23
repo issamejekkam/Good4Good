@@ -1,0 +1,131 @@
+/* Header Styles */
+header {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1cc94d;
+    color: rgb(168, 220, 12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+
+}
+body{
+
+}
+html {
+    background-color:#E7E7DE;
+  }
+  
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+header img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* Navigation Styles */
+nav {
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    min-height: 20px;
+    min-width: 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    transform: scale(1.1);
+}
+
+/* Table Styles */
+main {
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 2px solid #1cc94d;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #1cc94d;
+    color: white;
+    width: 150px;
+}
+
+button,td,th{
+    align-items: center;
+    text-align: center;
+}
+
+
+/* Styles de base pour le bouton */
+button {
+  background-color: #4CAF50; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  padding: 10px 20px; /* Espacement intérieur (haut/bas, gauche/droite) */
+  font-size: 16px; /* Taille de la police */
+  border: none; /* Supprime la bordure par défaut */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointeur au survol */
+}
+
+/* Styles au survol du bouton */
+button:hover {
+  background-color: #45a049; /* Nouvelle couleur de fond au survol */
+}
+
+/* Styles pour un bouton pressé (clic) */
+button:active {
+  background-color: #398439; /* Nouvelle couleur de fond lors du clic */
+}
+
+.invisible {
+
+    font-family: 'Montserrat', sans-serif;
+    color:white ;
+    text-decoration: none;
+    font-size: 15px;
+    padding-left: 20px;
+
+
+
+}

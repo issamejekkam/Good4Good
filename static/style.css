@@ -1,0 +1,141 @@
+html {
+    background-color:#E7E7DE;
+  }
+header {
+    background-color: #1cc94d;
+    color: rgb(168, 220, 12);
+    display: flex;
+    justify-content: space-between; /* Modifié pour séparer le logo et la navigation */
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between; /* Sépare le contenu de l'en-tête et la section de profil */
+    align-items: center; /* Alignement vertical des éléments */
+}
+
+.profile-section {
+    /* Styles pour la section de profil */
+    display: flex;
+    align-items: center;
+}
+
+.profile-logo {
+    /* Styles pour le logo de profil */
+    width: 50px; /* ou la taille souhaitée */
+    height: 50px; /* ou la taille souhaitée */
+    border-radius: 50%; /* Rend le logo circulaire */
+    /* Ajoutez d'autres styles si nécessaire */
+}
+
+header img {
+    width: 100px; /* Ajustez selon la taille souhaitée pour le logo */
+    border-radius: 50%;
+}
+
+nav {
+    width: 100%; /* Donne à la barre de navigation toute la largeur disponible */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centre les éléments de la liste */
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 50px; /* Augmente l'espacement entre les éléments de la liste */
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease; /* Animation douce pour la transformation */
+    min-height: 20px;
+    min-width: 20px;
+    display: inline-block; /* Pour appliquer une hauteur et largeur */
+}
+
+nav ul li a:hover {
+    transform: scale(1.1); /* Agrandit le texte de 10% */
+}
+
+.photos-container {
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Alignement vertical */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    background-color:#E7E7DE;
+    height:84.3vh;
+
+}
+
+.photo-section {
+    margin: 10px; /* Ajoute un peu d'espace entre les photos */
+    flex-basis: 40%; /* Chaque section prend environ la moitié de l'espace */
+    position: relative; /* Pour la position absolue du texte */
+}
+
+.photo {
+    width: 100%; /* La photo occupe toute la largeur de sa section */
+    height: 50%;
+    border-radius: 15px; /* Coins arrondis si vous le souhaitez */
+}
+
+.photo-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond noir semi-transparent */
+    padding: 10px; /* Un peu d'espace autour du texte */
+    border-radius: 5px; /* Bords arrondis pour un aspect plus doux */
+    width: 80%; /* Ajustez la largeur si nécessaire */
+    box-sizing: border-box; /* Assure que le padding ne change pas la largeur */
+}
+
+.photo-text span {
+    display: block; /* Chaque span sera affiché sur une nouvelle ligne */
+    color: white; /* Assure que le texte est blanc pour contraster avec le fond sombre */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(255, 255, 255); 
+    background-color:#E7E7DE;
+}
+
+footer {
+    background-color: #1cc94d;
+    color: white;
+    border-radius: 4px;
+    margin-top: auto; /* Le pied de page sera placé en bas de l'écran */
+    margin-right: 0px;
+    text-align: center;
+
+
+}
+
+.invisible {
+
+    color:white ;
+    text-decoration: none;
+    font-size: 15px;
+    padding-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+
+
+}
+

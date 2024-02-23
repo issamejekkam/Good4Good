@@ -1,0 +1,160 @@
+html {
+    background-color:#E7E7DE;
+  }
+header {
+    background-color: #1cc94d;
+    color: rgb(168, 220, 12);
+    display: flex;
+    justify-content: space-between; /* Modifié pour séparer le logo et la navigation */
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between; /* Sépare le contenu de l'en-tête et la section de profil */
+    align-items: center; /* Alignement vertical des éléments */
+}
+
+.profile-section {
+    /* Styles pour la section de profil */
+    display: flex;
+    align-items: center;
+}
+
+.profile-logo {
+    /* Styles pour le logo de profil */
+    width: 50px; /* ou la taille souhaitée */
+    height: 50px; /* ou la taille souhaitée */
+    border-radius: 50%; /* Rend le logo circulaire */
+    /* Ajoutez d'autres styles si nécessaire */
+}
+
+header img {
+    width: 100px; /* Ajustez selon la taille souhaitée pour le logo */
+    border-radius: 50%;
+}
+
+nav {
+    width: 100%; /* Donne à la barre de navigation toute la largeur disponible */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centre les éléments de la liste */
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 50px; /* Augmente l'espacement entre les éléments de la liste */
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease; /* Animation douce pour la transformation */
+    min-height: 20px;
+    min-width: 20px;
+    display: inline-block; /* Pour appliquer une hauteur et largeur */
+}
+
+nav ul li a:hover {
+    transform: scale(1.1); /* Agrandit le texte de 10% */
+}
+.barre_de_recherche{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+.nomcherché{
+    width: 500px;
+    height: 40px;
+
+
+    border-radius: 30px;
+
+    
+}
+.submit{
+    color: #cefad0;
+    width:100px;
+    height: 30px;
+    margin-left: 10px;
+
+    margin-top: 10px;
+    background:#008010;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+
+}
+::placeholder{
+    text-align: center;
+}
+.ami_picture{
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+}
+
+.amis {
+    display: inline-block;  
+    margin-top: 30px;
+
+}
+
+.amis [class^="ami"] {
+
+    display: inline-block;
+    margin: 20px;
+
+
+}
+th{
+    width: 500px;
+    
+}
+.info {
+    background: #cefad0;
+    border :1px solid green;
+    text-align: center;
+    color: green;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.error {
+    background: #ffc9bb;
+    border :1px solid red;
+    text-align: center;
+    color: red;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}  
+
+
+.no_friends{
+    padding-top: 10px;
+    margin: auto;
+    padding-bottom: 10px;
+    width: 80%;
+    box-shadow: 2px 5px 20px rgba(188, 250, 195, 0.5);
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+}
